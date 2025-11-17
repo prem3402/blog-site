@@ -18,7 +18,7 @@ class Blogs(SQLModel, table=True):
 class Users(SQLModel, table=True):
     __tablename__ = "users"
     id: int = Field(primary_key=True)
-    email: EmailStr
+    email: str = Field(unique=True)
     password: str
     created_at: datetime = Field(
         default_factory=datetime.utcnow,
