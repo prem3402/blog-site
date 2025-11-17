@@ -5,7 +5,7 @@ from sqlmodel import select
 from app.schema import BlogCreate, BlogsResponse
 from typing import List
 
-router = APIRouter(prefix="/blogs")
+router = APIRouter(prefix="/blogs", tags=["Blogs"])
 
 
 @router.get("/", response_model=List[BlogsResponse])

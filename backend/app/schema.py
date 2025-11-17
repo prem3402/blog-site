@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr
 from datetime import datetime
 
 
@@ -17,3 +17,13 @@ class BlogsResponse(BaseModel):
     title: str
     content: str
     created_at: datetime
+
+
+class User(BaseModel):
+    email: EmailStr
+    password: str
+
+
+class UserResponse(BaseModel):
+    id: int
+    email: EmailStr

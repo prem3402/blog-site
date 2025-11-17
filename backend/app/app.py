@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Response
 from app.db import create_db_and_tables
 
-from app.routers import blogs
+from app.routers import blogs, users
 
 from app.models import Blogs
 
@@ -19,3 +19,4 @@ def index():
 
 
 app.include_router(blogs.router)
+app.include_router(users.router)
